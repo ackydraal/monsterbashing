@@ -36,9 +36,13 @@ while (runProgram) {
                     hero1.health = hero1.health - monDmg;
                     console.log(`${ hero1.heroName } has ${ hero1.health } health left.`);
                 }
-
+                if (hero1.health < 0 ) {
+                    console.log (`The monster has slain ${ hero1.heroName } and all remaining heroes are running away.`)
+                    break;
+                }
                 else {
-                    console.log(`${ hero1.heroName } died`);
+                    console.log (`The monster has slain ${ hero1.heroName } and all remaining heroes are running away.`)
+                    break;
                 }
                 if (monster.health > 0 ) {
                     console.log (`${ hero1.heroName } attacks ${ monster.heroName } and causes ${ heroDmg }`)
@@ -63,6 +67,14 @@ while (runProgram) {
                 }
                 else {
                     console.log(`${ monster.heroName } died`)
+                }
+                if (monster.health < 0 ) {
+                    console.log (`The mighty heroes stand victorious on the battlefield. Congratulations`)
+                    break;
+                }
+                if (hero1.health < 0 ) {
+                    console.log (`The monster has slain ${ hero1.heroName } and all remaining heroes are running away.`)
+                    break;
                 }
                 
             
