@@ -20,21 +20,51 @@ while (runProgram) {
         health: 77,
         damage: 22,
     };
-    let damage = function getRndInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-    
+
 
     function attack(hero, monster) {
-        while (hero1.health > 0) {   
-                if (hero.health > 0) {
-                    console.log(`${ monster.heroName } attacks ${ hero1.heroName } and causes ${ monster.damage }`)
-                    hero1.health = hero1.health - monster.damage;
+        while (hero1.health > 0) {  
+            function getRndDamage(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            let monDmg = getRndDamage(1, 22);
+            let heroDmg = getRndDamage(1, 12);
+            let hero2Dmg = getRndDamage(1, 31);
+            let hero3Dmg = getRndDamage(1, 19);
+                if (hero1.health > 0) {
+                    console.log(`${ monster.heroName } attacks ${ hero1.heroName } and causes ${ monDmg }`)
+                    hero1.health = hero1.health - monDmg;
                     console.log(`${ hero1.heroName } has ${ hero1.health } health left.`);
                 }
+
                 else {
                     console.log(`${ hero1.heroName } died`);
                 }
+                if (monster.health > 0 ) {
+                    console.log (`${ hero1.heroName } attacks ${ monster.heroName } and causes ${ heroDmg }`)
+                    monster.health = monster.health - heroDmg;
+                    console.log(`${ monster.heroName } has ${ monster.health } health left.`);
+                }
+                else {
+                    console.log(`${ monster.heroName } died`)
+                }
+                if (monster.health > 0 ) {
+                    console.log (`${ hero2.heroName } attacks ${ monster.heroName } and causes ${ hero2Dmg }`)
+                    monster.health = monster.health - hero2Dmg;
+                    console.log(`${ monster.heroName } has ${ monster.health } health left.`);
+                }
+                else {
+                    console.log(`${ monster.heroName } died`)
+                }
+                if (monster.health > 0 ) {
+                    console.log (`${ hero3.heroName } attacks ${ monster.heroName } and causes ${ hero3Dmg }`)
+                    monster.health = monster.health - hero3Dmg;
+                    console.log(`${ monster.heroName } has ${ monster.health } health left.`);
+                }
+                else {
+                    console.log(`${ monster.heroName } died`)
+                }
+                
             
         }
     }
